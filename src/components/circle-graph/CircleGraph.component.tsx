@@ -27,16 +27,23 @@ export const CircleGraph = () => {
       {
         label: "# of Votes",
         data:
-          data &&
-          Object.keys(data.responses).map(
-            (resp: any) => data.responses[resp].length
-          ),
-        backgroundColor: Object.keys(data.responses).map((resp: any) =>
-          _generateRandomColor()
-        ),
-        borderColor: Object.keys(data.responses).map((resp: any) =>
-          _generateRandomColor()
-        ),
+          (data &&
+            Object.keys(data?.responses)?.map(
+              (resp: any) => data.responses[resp].length
+            )) ??
+          [],
+        backgroundColor:
+          (data &&
+            Object.keys(data?.responses)?.map((resp: any) =>
+              _generateRandomColor()
+            )) ??
+          [],
+        borderColor:
+          (data &&
+            Object.keys(data?.responses)?.map((resp: any) =>
+              _generateRandomColor()
+            )) ??
+          [],
         borderWidth: 1,
       },
     ],
